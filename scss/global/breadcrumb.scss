@@ -1,0 +1,57 @@
+.Breadcrumb {
+    background: url(../images/parollax.jpg) no-repeat center center fixed;
+    background-size: cover ;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($color-logo, .6);
+    }
+
+    .title {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .bread-area {
+
+        display: flex;
+
+
+        .bread-item {
+
+            display: flex;
+
+            .bread-link {
+                color: rgba(white, .7);
+        
+                &:hover {
+                    color: rgba(white, .9);
+                }
+        
+            }
+
+            .fa-angle-right {
+
+                color: white;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            &.active {
+
+                .bread-link {
+                    color: white;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

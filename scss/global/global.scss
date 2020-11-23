@@ -1,0 +1,245 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+// SINGLE STYLING
+
+.align-self-center {
+    align-self: center;
+}
+
+.is-show {
+    display: block;
+    transform: scaleY(1);
+
+    @include mq("min-large") {
+        display: none;
+    transform: scaleY(0);
+
+    }
+}
+
+.max-width-clear {
+    max-width: initial;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.img-fluid {  
+    height: auto;
+    max-width: 100%;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+
+.left-image {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.right-image {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+//COLORING
+
+.color-gold {
+    color: $color-green;
+}
+.color-mustard-l {
+    color: $color-gold;
+}
+.color-logo {
+    color: $color-logo;
+}
+.color-red {
+    color: $color-red;
+}
+.color-text {
+    color: $color-text;
+}
+.color-white {
+    color: white;
+}
+
+//HIDING ELEMENTS FOR RESPONSIVITY
+
+
+.hide-on-large {
+    @include mq("large") {   
+        display: none;
+    }
+}
+
+.hide-on-tablet {
+    @include mq("tablet") {   
+        display: none;
+    }
+}
+.hide-on-min-tablet {
+    @include mq("min-tablet") {   
+        display: none;
+    }
+}
+.hide-on-small {
+    @include mq("small") {   
+        display: none;
+    }
+}
+.hide-on-min-small {
+    @include mq("min-small") {   
+        display: none;
+    }
+}
+
+
+
+/* TEXTING */
+
+.title {
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subtitle {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+// CARD CLASSLARI
+
+.card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &-body {
+
+        padding: 30px 0;
+    }
+
+    &-title {
+
+        font-size: 25px;
+        color: black;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+
+    }
+
+    &-subtitle {
+
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+
+    }
+
+    &-price {
+
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        color: $color-gold;
+    }
+
+    &-link {
+
+        color: inherit;
+        &:hover {text-decoration: underline;}
+
+    }
+
+    &-text {
+
+        font-size: 14px;
+        color: $color-text;
+    }
+
+    &-img {
+
+        width: 100%;
+        display: block;
+    }
+
+    &-link-img {
+        position: relative;
+        width: 100%;
+    }
+}
+
+
+//CONTENT WRAPPER
+.content-wrapper {
+
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    word-wrap: break-word;
+
+    &::before, &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    p {
+        margin-bottom: 25px;
+    }
+
+    .subtitle {
+        margin-bottom: 50px;
+    }
+
+    ul {
+        padding-left: 40px;
+        list-style-type: inherit;
+        margin-bottom: 25px;
+    }
+
+    ol {
+
+        padding-left: 40px;
+        list-style-type: decimal;
+        margin-bottom: 25px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+}

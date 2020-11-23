@@ -1,0 +1,1574 @@
+// Slider 
+.Slider {
+
+    .container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    &-owl {
+
+        &-item.img-1 {
+
+            background: url(../images/slider1.jpg) no-repeat;
+            background-position: center center;
+            background-size: 100%;
+            background-size: cover;
+
+        }
+        &-item.img-2 {
+
+            background: url(../images/slider2.jpg) no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        &-item {
+
+            min-height: 780px;
+            @include mq("large") {
+                min-height: 700px;
+            }
+            @include mq("small") {
+                min-height: 600px;
+            }
+            text-align: center;
+            align-items: flex-end;
+            padding-bottom: 50px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(black, .4);
+
+            }
+
+            .title-container {
+
+                z-index: 2;
+                max-width: 70%;
+                padding: 30px 10px;
+                border: 10px solid rgba(white, .4);
+
+                .title {
+                    color: white;
+                    margin-bottom: 25px;
+
+                    @include mq("tablet") {
+                        font-size: 50px;
+                    }
+                    @include mq("small") {
+                        font-size: 30px;
+                        
+                        
+                    }
+                }
+    
+                .subtitle {
+                    color: white;
+                    @include mq("tablet") {
+                        font-size: 20px;
+                    }
+                    @include mq("small") {
+                        font-size: 13px;
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+
+    .owl-dots {
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: calc(100% - 30px);
+    }
+    .owl-dot {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: #fff !important;
+
+        &.active {
+            background-color: $color-logo !important;
+        }
+    }
+
+    .owl-dot + .owl-dot {
+        margin-left: 5px;
+    }
+
+   &-down {
+
+        background: rgb(31,26,28);
+        background: linear-gradient(180deg, rgba(31,26,28,1) 0%, rgba(23,25,31,1) 23%);
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &-item {
+
+            display: flex;
+            align-items: center;
+            min-height: 40px;
+            padding-right: 5px;
+            border-right: 1px dashed white;
+            justify-content: center;
+        }
+        &-icon {
+            font-size: 30px;
+            color: $color-logo;
+        }
+        &-content {
+            font-size: 11px;
+            line-height: 20px;
+            font-weight: 500;
+            color: $color-gold;
+            padding-left: 10px;
+        }
+    }
+}
+
+// Present
+.Present {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .card-col:nth-child(2) .card {
+        
+        @include mq("tablet") {
+
+            flex-direction: column-reverse;
+        }
+    }
+
+    .card {
+        
+        position: relative;
+        overflow: hidden;
+        padding: 15px 15px;
+
+        @include mq("large") {
+            justify-content: center;
+        }
+
+        &-body {
+
+            @include mq("tablet") {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &:hover .card-img {
+            transform: scale(1.1);
+        }
+        
+        &-img {
+            transition: all ease .5s;
+        }
+
+        &-link-img {
+
+            @include mq("min-desktop") {
+                &::after {
+                content: 'ÜRÜNÜ İNCELE !';
+                
+                color: $color-gold;
+                font-weight: 600;
+                
+                padding: 10px;
+                position: absolute;
+                top: 80%;
+                left: 50%;
+                transform: translateX(-50%) scaleX(0.4);
+
+                border: 2px solid $color-gold;
+                background-color: white;
+                transition: all ease .5s;
+                opacity: 0;
+            }
+
+                &:hover::after {
+                    transform: translateX(-50%) scaleX(1);
+                    opacity: 1;
+                }
+            }
+
+            
+        }
+
+        &:hover .card-link-img {
+            box-shadow: 5px 5px 8px rgba(black, .2);
+        }
+
+        &-title {
+            margin-bottom: 20px;
+            display: block;
+            @include mq("tablet") {
+                text-align: center;
+            }
+        }
+
+        &-text {
+            @include mq("tablet") {
+                text-align: center;
+            }
+        }
+
+        &:hover .card-link {
+            color: $color-gold;
+        }
+
+        i {
+            color: $color-gold;
+        }
+    }
+}
+
+
+// parollax
+.Parollax {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    position: relative;
+
+    background: url(../images/parollax.jpg) no-repeat fixed center center;
+    background-size: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($color-header-bg, .95);
+    }
+
+    .row {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card {
+
+        flex-direction: row;
+
+        &-left {
+            
+            justify-content: flex-end;
+
+            .card-body {
+                 margin-right: 25px;
+                 text-align: right;
+            }
+        }
+        &-right {
+            
+            justify-content: flex-start;
+
+            .card-body {
+                 margin-left: 25px;
+                 text-align: left;
+            }
+        }
+
+        @include mq("desktop") {
+            justify-content: center;
+        }
+        
+
+        &-icon {
+            font-size: 40px;
+            color: $color-green;
+        }
+
+        &-title {
+            color: white;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        &-text {
+            color: rgba(white, .4);
+        }
+    }
+}
+
+//Products
+
+.Products {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .section-title {
+
+        font-size: 22px;
+
+        & {
+            margin-bottom: 20px;
+        }
+    }
+
+    &-col {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-new {
+
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+        border-radius: 5px;
+        background-color: $color-green;
+        color: white;
+    }
+
+    &-button {
+
+        background-color: $color-gold;
+        display: inline-block;
+        padding: 15px 20px;
+        color: white;
+        transition: all ease .25s;
+
+        &:hover {
+            background-color: $color-logo;
+        }
+
+    }
+
+    .card {
+
+        align-items: center;
+        padding-bottom: 30px;
+        display: inline-flex;
+
+        &:hover {
+            @include mq("min-small") {
+                background-color: #f5f5f5;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(black, .1);
+            }
+            
+        }
+
+        @include mq("small") {
+            background-color: #f5f5f5;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(black, .1);
+        }
+
+
+        &:hover .card-link-img::before {
+
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(white, .3);
+        }
+
+        &-subtitle {
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        &-link {
+            display: block;
+        }
+
+        &-price {
+
+            text-align: center;
+        }
+    }
+}
+
+//Contact
+
+.Contact {
+
+    padding-top: calc(#{$section-padding * 2});
+    padding-bottom: calc(#{$section-padding * 2});
+
+    position: relative;
+
+    background: url(../images/slider2.jpg) center center no-repeat ;
+    background-size: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-logo, .85);
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mq("large") {
+            margin-bottom: 40px;
+        }
+    }
+
+    input {
+
+        padding: 25px 30px;
+        border: 0;
+        margin: 0;
+        max-width: 50%;
+
+        @include mq("small") {
+            padding: 15px 15px;
+            font-size: 10px;
+        }
+        
+        &[type='text'] {
+
+            border-top-left-radius: 34px;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 34px;
+            border-bottom-right-radius: 0;
+
+            @include mq("small") {
+                border-top-left-radius: 21px;
+            border-bottom-left-radius: 21px;
+            }
+            
+            border-right: 1px solid $color-text;
+        }
+
+        &[type='tel'] {
+
+            border-top-right-radius: 34px;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 34px;
+            border-bottom-left-radius: 0;
+
+            @include mq("small") {
+                border-top-right-radius: 21px;
+                border-bottom-right-radius: 21px;
+                padding-right: 35px;
+            }
+            padding-right: 60px;
+        }
+    }
+
+    button[type='submit'] {
+
+        height: 48px;
+        width: 48px;
+        margin-left: -58px;
+
+        @include mq("small") {
+            height: 22px;
+            width: 22px;
+            margin-left: -32px;
+        }
+        background-color: $color-logo;
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+
+    }
+
+    .title-align {
+
+        .section-title {
+
+            font-size: 40px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                content: '';
+                width: 30%;
+                height: 5px;
+                background-color: white;
+            }
+            
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: white;
+            font-size: 15px;
+        }
+    }
+}
+
+//URUNLER.PHP
+
+.Urunler {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .row.reverse {
+        @include mq("tablet") {
+            
+            flex-direction: column-reverse;
+        }
+    }
+
+    .card.card-urun {
+        
+        padding-bottom: 20px;
+        height: 100%;
+
+        &:hover {
+
+            @include mq("min-tablet") {
+                background-color: #f5f5f5;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                box-shadow: 3px 3px 10px rgba(black, .1);
+            }
+        }
+
+        @include mq("tablet") {
+            background-color: #f5f5f5;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(black, .1);
+        }
+
+        .card-link-img {
+            position: relative;
+        }
+
+        .card-link-img::before {
+
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(white, .3);
+            opacity: 0;
+        }
+
+        &:hover .card-link-img::before {
+            opacity: 1;
+        }
+
+        .card-subtitle {
+            text-align: center;
+        }
+    }
+
+    //sidebar
+
+    .sidebar {
+        background-color: rgba($color-gold, .5);
+        width: 100%;
+        position: sticky;
+        top: 130px;
+        padding: 10px;
+        @include mq("tablet") {
+            padding: 30px;
+        }
+
+        .card-link-img {
+
+            position: relative;
+
+            &::after {
+
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(black, .2);
+                opacity: 0;
+                transition: .25s;
+            }
+        }
+
+        .card:hover .card-link-img::after {
+            opacity: 1;
+        }
+
+        .subtitle {
+            margin-bottom: 20px;
+
+            @include mq("desktop") {
+                font-size: 16px;
+            }
+
+            @include mq("tablet") {
+                font-size: 25px;
+            }
+        }
+    }
+
+    .sidebar-category {
+
+        margin-bottom: 50px;
+    }
+    .sidebar-li + .sidebar-li {
+
+        margin-top: 10px;
+    }
+    .sidebar-link {
+        color: black;
+        @include mq("desktop") {
+            font-size: 12px;
+        }
+
+        @include mq("tablet") {
+            font-size: 16px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .owl-dots {
+
+        display: flex;
+
+        .owl-dot {
+
+            flex-grow: 1;
+            height: 8px;
+            background-color: white;
+            margin-top: 20px;
+            
+            &:focus, &:active {
+                outline: none;
+            }
+
+            &.active {
+                background-color: $color-green;
+
+            }
+        }
+
+        .owl-dot + .owl-dot {
+            border-left: $color-text 2px solid;
+        }
+    }
+
+}
+
+//KATEGORİ.PHP
+
+.Category {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .card {
+
+        height: 100%;
+        background-color: #f5f5f5;
+        box-shadow: 3px 3px 5px rgba(black, .1);
+        overflow: hidden;
+
+        .card-body {
+            padding: 30px 10px;
+        }
+
+        .card-subtitle {
+
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+            color: inherit;
+        }
+
+        .card-text {
+
+            text-align: center;
+
+        }
+
+        .card-link-img, .card-img {
+            transition: all ease .25s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-link-img::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(white, .2);
+            opacity: 0;
+        }
+
+        &:hover {
+
+            .card-img {
+
+                transform: scale(1.1);
+            }
+
+            .card-link-img::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .card-col {
+
+        margin-bottom: 30px;
+    }
+}
+
+//SABİT-SAYFA.PHP
+
+.Sabit {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .title {
+
+        margin-bottom: 50px;
+    }
+}
+
+//HAKKIMIZDA.PHP
+
+.Hakkimizda {
+    
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+}
+
+//BLOGS.PHP
+
+.Blogs {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    &-col {
+        margin-bottom: 30px;
+    }
+
+    .card {
+
+        align-items: flex-start;
+        box-shadow: 3px 5px 8px rgba(black, .1), -3px 5px 8px rgba(black, .1);
+
+        &:hover .card-link-img::after {
+
+            opacity: 1;
+        }
+
+        .card-title {
+
+            margin-bottom: 20px;
+            display: block;
+            transition: .25s all ease;
+
+            &:hover {
+                color: $color-gold;
+            }
+        }
+
+        .card-subtitle {
+
+            color: inherit;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 2px;
+                background-color: $color-gold;
+                bottom: 20px;
+                left: 30px;
+                transform: scaleX(.1);
+                transform-origin: 0;
+                transition: .25s all ease;
+                
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+            }
+
+        }
+
+        .card-text {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .card-link-img::after {
+
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(black, .2);
+            opacity: 0;
+            transition: all ease .25s;
+        }
+
+        .card-body {
+            padding: 30px 15px;
+        }
+    }
+    
+}
+
+//BLOG-DETAY.PHP
+
+.Blog-detay {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .sidebar {
+        background-color: #f5f5f5;
+        position: sticky;
+        top: 130px;
+        padding: 30px 40px;
+
+        .subtitle {
+            margin-bottom: 20px;
+
+            @include mq("desktop") {
+                font-size: 16px;
+            }
+
+            @include mq("tablet") {
+                font-size: 25px;
+            }
+        }
+
+        .owl-dots {
+
+            display: flex;
+    
+            .owl-dot {
+    
+                flex-grow: 1;
+                height: 8px;
+                background-color: white;
+                margin-top: 20px;
+                
+                &:focus, &:active {
+                    outline: none;
+                }
+    
+                &.active {
+                    background-color: $color-green;
+    
+                }
+            }
+    
+            .owl-dot + .owl-dot {
+                border-left: $color-text 2px solid;
+            }
+        }
+
+        .card {
+
+            .card-link-img {position: relative;}
+
+            .card-link-img::before {
+
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(black, .2);
+                transition: .25s;
+                opacity: 0;
+
+
+            }
+
+            &:hover .card-link-img::before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+//ÜRÜN-DETAY.PHP
+
+.Urun-detay {
+    
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .urun-owl {
+
+        .owl-dots {
+                display: flex;
+                flex-wrap: wrap;
+                padding-top: 30px;
+                padding-bottom: 30px;
+
+            }
+
+            .owl-dot {
+
+                padding-right: 5px !important;
+                padding-left: 5px !important;
+                max-width: 25%;
+                opacity: .7;
+
+                &:hover {
+                    opacity: .6;
+                }
+
+                &.active {
+                    opacity: 1;
+                }
+
+                .urun-foto-alt {
+
+                    max-width: 100%;
+                }
+
+                margin-bottom: 20px;
+
+            }
+
+            .owl-container {
+
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                pointer-events: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(black, .2);
+                color: white;
+                opacity: 0;
+                transition: .5s;
+            }
+
+            .owl-stage-outer:hover .owl-container {
+                opacity: 1;
+            }
+    }
+
+    .sepet-ekle .subtitle {
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .urun-form {
+
+        .form-select {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            border-bottom: 1px solid #d5d5d5;
+            padding-bottom: 40px;
+    
+            label {
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+    
+            select {
+    
+                height: 50px;
+                width: 75%;
+            }
+        }
+    
+        .form-message {
+    
+            padding-top: 20px;
+    
+            .subtitle {
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
+        }
+    
+        .form-submit {
+    
+            border-bottom: 1px solid #d5d5d5;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+    
+            input[type="number"] {
+    
+                width: 50px;
+                font-size: 20px;
+                margin-right: 20px;
+            }
+    
+            button[type="submit"] {
+    
+                background-color: $color-gold;
+                transition: .25s;
+                padding: 10px 20px;
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
+    
+    
+                &:hover {
+                    background-color: $color-logo;
+                }
+            }
+        }
+
+    }
+    
+}
+
+.Urun-aciklama {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .button-container {
+
+        border-top: 1px solid #d5d5d5;
+        padding-top: 5px;
+        display: flex;
+        
+        .content-selector + .content-selector {
+            margin-left: 20px;
+        }
+        .content-selector {
+            background-color: transparent;
+            font-size: 20px;
+            color: rgba(black, .8);
+            position: relative;
+            cursor: pointer;
+            &:active, &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                color: rgba(black, .7);
+            }
+            &.active {
+                color: black;
+            }
+
+            &::after {
+
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                top: -7px;
+                left: 0;
+                background-color: $color-green;
+                transform: scaleX(0);
+                transition: .25s;
+                transform-origin: 0 0;
+            }
+
+            &.active::after {
+
+                content: '';
+               transform: scaleX(1);
+
+            }
+
+        }
+    }
+
+    .content {
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        position: absolute;
+        padding-top: 30px;
+
+        &.show {
+            transform: scaleY(1);
+            position: relative;
+            transition:  .5s;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #d5d5d5;
+            word-wrap: break-word;
+        }
+
+        tr {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        tr:nth-child(even){
+
+            background-color: #f5f5f5;
+        }
+    
+        .card {
+
+            flex-direction: row;
+            align-items: center;
+
+            justify-content: space-between;
+
+            .card-photo {
+                max-width: 100px;
+                margin-right: 30px;
+                @include mq("small") {
+                    display: none;
+                }
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            .card-body {
+
+                padding: 30px 15px;
+                p:last-child {
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+.Urun-benzer {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .subtitle {
+
+        margin-bottom: 30px;
+    }
+
+    .card {
+        box-shadow: 3px 5px 8px rgba(black, .1);
+        padding-bottom: 20px;
+    }
+
+    .owl-item {
+
+        padding-bottom: 10px;
+
+    }
+
+    .owl-dots {
+
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        .owl-dot {
+
+            height: 14px;
+            width: 14px;
+            margin-right: 4px;
+            margin-left: 4px;
+            background-color: $color-gold;
+            &.active {
+                background-color: $color-logo;
+            }
+            border-radius: 50%;
+        }
+    }
+
+}
+
+//İLETİŞİM.PHP
+
+.map {
+    width: 100%;
+
+    iframe {
+        width: 100%;
+    }
+}
+
+.iletisim {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .subtitle {
+        margin-bottom: 30px;
+    }
+
+    
+
+    form {
+
+        label {
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            resize: none;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: $color-gold;
+            transition: .25s;
+            font-weight: 600;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+
+            &:hover {
+                background-color: $color-logo;
+            }
+        }
+    }
+
+    .iletisim-info {
+
+        @include mq("tablet") {
+            
+            margin-top: 70px;
+        }
+    }
+
+    .iletisim-cont {
+
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        p {
+            word-wrap: break-word;
+        }
+
+        i {
+            margin-right: 20px;
+            color: $color-logo;
+        }
+
+        a {
+            color: inherit;
+            font-size: 20px;
+
+            &:hover {
+                color: $color-logo;
+            }
+        }
+    }
+}
+
+//KARGO-TAKİP.PHP
+
+.Kargo-takip {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+
+            background-color: $color-gold;
+            color: white;
+            padding: 8px;
+            transition: .5s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-logo;
+            }
+        }
+    }
+}
+
+//SEPET.PHP
+
+.Sepet {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    thead {
+        background-color: #f5f5f5;
+
+        @include mq("desktop") {
+            display: none;
+        }
+
+        td {
+            padding: 20px 10px;
+            text-align:left;
+            font-weight: 600;
+        }
+    }
+
+    tbody {
+
+        tr {
+
+            @include mq("desktop") {
+                
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                box-shadow: 3px 5px 8px rgba(black, .1);
+            }
+        }
+
+        td {
+
+            padding: 10px;
+            border: 1px solid #f5f5f5;
+
+            button {
+                color: $color-red;
+                background-color: transparent;
+            }
+        }
+
+        input {
+            max-width: 60px;
+        }
+    }
+
+    .form-row {
+        padding-top: $section-padding*2;
+
+    }
+
+    form {
+
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .subtitle {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="tel"], input[type="email"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            resize: none;
+        }
+
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        label[for="sozlesme"] a {
+            color: inherit;
+        }
+
+        .sozlesme {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: $color-gold;
+            padding: 20px 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .5s;
+
+
+            &:hover {
+                background-color: $color-logo;
+            }
+        }
+    }
+}
+
+//SEARCH.PHP
+
+.Search {
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .row:first-child {
+
+        margin-bottom: 100px;
+    }
+
+    form {
+
+        display: flex;
+        justify-content: center;
+
+        input {
+            width: 70%;
+            padding: 10px;
+            margin-right: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: $color-gold;
+            cursor: pointer;
+            color: white;
+        }
+    }
+
+    .card-col {
+        margin-bottom: 30px;
+    }
+
+    .card {
+
+        height: 100%;
+        background-color: #f5f5f5;
+        box-shadow: 3px 3px 5px rgba(black, .1);
+        overflow: hidden;
+
+        .card-body {
+            padding: 30px 10px;
+        }
+
+        .card-subtitle {
+
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+            color: inherit;
+        }
+
+        .card-text {
+
+            text-align: center;
+
+        }
+
+        .card-link-img, .card-img {
+            transition: all ease .25s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-link-img::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(white, .2);
+            opacity: 0;
+        }
+
+        &:hover {
+
+            .card-img {
+
+                transform: scale(1.1);
+            }
+
+            .card-link-img::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
