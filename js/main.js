@@ -241,5 +241,7 @@ $('select[name="tax_type"]').change(function () {
 });
 
 //
+// yorum satırı
+
 
 //burası de 2. commit olsun
