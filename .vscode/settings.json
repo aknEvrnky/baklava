@@ -1,14 +1,14 @@
 {
     "files.exclude": {
-        "upload": true,
-        "webfonts": true,
-        ".vscode": true,
-        "css": true,
-        "node_modules": true,
-        ".gitignore": true,
-        "gulpfile.js": true,
-        "npm-shrinkwrap.json": true,
-        "package.json": true
+        "upload": false,
+        "webfonts": false,
+        ".vscode": false,
+        "css": false,
+        "node_modules": false,
+        ".gitignore": false,
+        "gulpfile.js": false,
+        "npm-shrinkwrap.json": false,
+        "package.json": false
     },
-    "workspace.isHidden": true
+    "workspace.isHidden": false
 }
