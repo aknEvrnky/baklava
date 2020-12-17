@@ -2,6 +2,6 @@ node_modules/
 package-lock.json
 main.css
 .vscode/
-.gulpfile.js
+gulpfile.js
 npm-shrinkwrap.json
 package.json
