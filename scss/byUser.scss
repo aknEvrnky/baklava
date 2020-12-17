@@ -504,6 +504,8 @@
             margin-left: -32px;
         }
         background-color: $color-logo;
+        transition: .25s;
+        &:hover {background-color: $color-gold;}
         color: white;
         border-radius: 50%;
         cursor: pointer;

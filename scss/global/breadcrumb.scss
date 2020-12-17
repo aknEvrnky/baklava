@@ -23,11 +23,13 @@
     .bread-area {
 
         display: flex;
+        flex-wrap: wrap;
 
 
         .bread-item {
 
             display: flex;
+            margin-bottom: 10px;
 
             .bread-link {
                 color: rgba(white, .7);
